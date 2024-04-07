@@ -1,0 +1,48 @@
+openapi: 3.0.0
+paths:
+  /:
+    get:
+      operationId: AppController_getHello
+      parameters: []
+      responses:
+        "200":
+          description: ""
+  /test:
+    get:
+      operationId: AppController_getTest
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TestResponse"
+  /another:
+    get:
+      operationId: AppController_getAnother
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TestResponse"
+info:
+  title: My Api
+  description: ""
+  version: 1.0.0
+  contact: {}
+tags: []
+servers: []
+components:
+  schemas:
+    TestResponse:
+      type: object
+      properties:
+        message:
+          type: string
+          example: Lorem Ipsum dolor set amet
+      required:
+        - message
